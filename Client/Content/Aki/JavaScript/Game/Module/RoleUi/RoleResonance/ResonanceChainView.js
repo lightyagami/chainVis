@@ -241,8 +241,9 @@ class ResonanceChainView extends UiTabViewBase_1.UiTabViewBase {
           var i = e.GroupIndex,
             s = i - 1;
           s < RESONANCE_ITEM_COUNT &&
-            ((t = i <= n ? this.Wco(s) : this.imo(s)).SetActive(!0),
+            ((t = this.Wco(s)).SetActive(!0),
             t.Update(h, e.Id),
+            t.SetSelectState(s === n - 1), // Set the last item as selected
             (this.kco[s] = t));
         });
   }
